@@ -1,0 +1,95 @@
+{
+  "entities": {
+    "Invoice": {
+      "title": "Invoice",
+      "description": "Hóa đơn bán hàng karaoke",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "roomName": { "type": "string" },
+        "customerName": { "type": "string" },
+        "totalAmount": { "type": "number" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "InvoiceItem": {
+      "title": "InvoiceItem",
+      "description": "Chi tiết các món đã gọi trong hóa đơn",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "invoice_id": { "type": "string" },
+        "item_name": { "type": "string" },
+        "item_price": { "type": "number" },
+        "quantity": { "type": "number" },
+        "category": { "type": "string" },
+        "created_at": { "type": "string" }
+      }
+    },
+    "Customer": {
+      "title": "Customer",
+      "description": "Khách hàng và công nợ",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "debt": { "type": "number" }
+      }
+    },
+    "InventoryHistory": {
+      "title": "InventoryHistory",
+      "description": "Lịch sử kiểm kho",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "checkDate": { "type": "string" },
+        "checkMode": { "type": "string" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "RoomSession": {
+      "title": "RoomSession",
+      "description": "Trạng thái phiên phòng đang mở hát theo thời gian thực",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "roomName": { "type": "string" },
+        "roomPrice": { "type": "number" },
+        "checkIn": { "type": "string" },
+        "checkOut": { "type": "string" },
+        "checkInDate": { "type": "string" },
+        "checkOutDate": { "type": "string" },
+        "discountType": { "type": "string" },
+        "discountValue": { "type": "number" },
+        "taxRate": { "type": "number" },
+        "isRealTime": { "type": "boolean" },
+        "updatedAt": { "type": "string" },
+        "updatedBy": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "/invoices/{invoiceId}": {
+      "schema": "Invoice",
+      "description": "Bộ sưu tập hóa đơn bán hàng"
+    },
+    "/invoice_items/{invoiceItemId}": {
+      "schema": "InvoiceItem",
+      "description": "Bộ sưu tập chi tiết các món của từng hóa đơn"
+    },
+    "/room_sessions/{roomId}": {
+      "schema": "RoomSession",
+      "description": "Trạng thái các phòng đang mở hát đồng bộ đa tài khoản"
+    },
+    "/customers/{customerId}": {
+      "schema": "Customer",
+      "description": "Bộ sưu tập khách hàng"
+    },
+    "/inventory_history/{historyId}": {
+      "schema": "InventoryHistory",
+      "description": "Bộ sưu tập lịch sử kiểm kho"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default allow read, write for app documents
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}

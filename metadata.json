@@ -1,0 +1,8 @@
+{
+  "name": "Remix luyen1v229 backup",
+  "description": "quản lý kara",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

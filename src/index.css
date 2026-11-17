@@ -1,0 +1,324 @@
+/* Fonts loaded asynchronously via index.html to avoid render-blocking chain */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 220 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 15%;
+
+    --primary: 220 65% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 10% 94%;
+    --secondary-foreground: 220 15% 25%;
+
+    --muted: 220 10% 96%;
+    --muted-foreground: 220 10% 44%;
+
+    --accent: 220 10% 94%;
+    --accent-foreground: 220 15% 15%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 10% 92%;
+    --input: 220 10% 92%;
+    --ring: 220 65% 50%;
+
+    --radius: 0.625rem;
+
+    --success: 150 50% 42%;
+    --success-foreground: 0 0% 100%;
+
+    --vip: 260 55% 55%;
+    --vip-foreground: 0 0% 100%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 15% 25%;
+    --sidebar-primary: 220 65% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 10% 96%;
+    --sidebar-accent-foreground: 220 15% 15%;
+    --sidebar-border: 220 10% 92%;
+    --sidebar-ring: 220 65% 50%;
+
+    --chart-1: 220 65% 50%;
+    --chart-2: 195 75% 45%;
+    --chart-3: 240 65% 60%;
+    --chart-4: 175 65% 40%;
+    --chart-5: 260 60% 58%;
+  }
+
+  .dark {
+    --background: 224 15% 8%;
+    --foreground: 220 10% 92%;
+
+    --card: 224 15% 11%;
+    --card-foreground: 220 10% 92%;
+
+    --popover: 224 15% 11%;
+    --popover-foreground: 220 10% 92%;
+
+    --primary: 220 65% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 224 12% 18%;
+    --secondary-foreground: 220 10% 85%;
+
+    --muted: 224 12% 16%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 224 12% 18%;
+    --accent-foreground: 220 10% 92%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 224 12% 18%;
+    --input: 224 12% 18%;
+    --ring: 220 65% 58%;
+
+    --success: 150 50% 48%;
+    --success-foreground: 0 0% 100%;
+
+    --vip: 260 55% 62%;
+    --vip-foreground: 0 0% 100%;
+
+    --sidebar-background: 224 15% 10%;
+    --sidebar-foreground: 220 10% 85%;
+    --sidebar-primary: 220 65% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 224 12% 16%;
+    --sidebar-accent-foreground: 220 10% 92%;
+    --sidebar-border: 224 12% 18%;
+    --sidebar-ring: 220 65% 58%;
+
+    --chart-1: 220 65% 58%;
+    --chart-2: 195 75% 55%;
+    --chart-3: 240 65% 68%;
+    --chart-4: 175 65% 50%;
+    --chart-5: 260 60% 68%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Theme Accent Variants */
+:root.theme-accent-green, .theme-accent-green {
+  --primary: 150 60% 40%;
+  --ring: 150 60% 40%;
+  --sidebar-primary: 150 60% 40%;
+  --sidebar-ring: 150 60% 40%;
+  --chart-1: 150 60% 40%;
+  --chart-2: 165 70% 42%;
+  --chart-3: 135 65% 45%;
+  --chart-4: 180 60% 40%;
+  --chart-5: 110 55% 45%;
+}
+
+:root.theme-accent-purple, .theme-accent-purple {
+  --primary: 270 70% 60%;
+  --ring: 270 70% 60%;
+  --sidebar-primary: 270 70% 60%;
+  --sidebar-ring: 270 70% 60%;
+  --chart-1: 270 70% 60%;
+  --chart-2: 285 75% 58%;
+  --chart-3: 250 70% 65%;
+  --chart-4: 310 65% 55%;
+  --chart-5: 230 65% 60%;
+}
+
+:root.theme-accent-rose, .theme-accent-rose {
+  --primary: 340 75% 55%;
+  --ring: 340 75% 55%;
+  --sidebar-primary: 340 75% 55%;
+  --sidebar-ring: 340 75% 55%;
+  --chart-1: 340 75% 55%;
+  --chart-2: 355 80% 60%;
+  --chart-3: 325 70% 55%;
+  --chart-4: 15 85% 58%;
+  --chart-5: 300 60% 50%;
+}
+
+:root.theme-accent-amber, .theme-accent-amber {
+  --primary: 38 92% 50%;
+  --ring: 38 92% 50%;
+  --sidebar-primary: 38 92% 50%;
+  --sidebar-ring: 38 92% 50%;
+  --chart-1: 38 92% 50%;
+  --chart-2: 48 96% 48%;
+  --chart-3: 25 95% 53%;
+  --chart-4: 32 98% 60%;
+  --chart-5: 15 85% 50%;
+}
+
+:root.theme-accent-amber_modern, .theme-accent-amber_modern {
+  --background: 48 33% 98%;
+  --foreground: 30 10% 16%;
+  --primary: 48 96% 48%;
+  --primary-foreground: 30 10% 16%;
+  --accent: 48 96% 48%;
+  --accent-soft: 54 91% 89%;
+  --card: 0 0% 100%;
+  --card-foreground: 30 10% 16%;
+  --border: 30 10% 88%;
+  --ring: 48 96% 48%;
+  --sidebar-background: 0 0% 100%;
+  --sidebar-foreground: 30 10% 16%;
+  --sidebar-primary: 48 96% 48%;
+  --sidebar-accent: 54 91% 89%;
+  --sidebar-border: 30 10% 88%;
+  --chart-1: 48 96% 48%;
+  --chart-2: 38 92% 50%;
+  --chart-3: 25 95% 53%;
+  --chart-4: 42 85% 65%;
+  --chart-5: 18 80% 48%;
+}
+
+/* Print styles - Optimized for K80 thermal printer */
+@media print {
+  @page {
+    size: 80mm auto;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  html, body {
+    width: 80mm !important;
+    max-width: 80mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body.printing > *:not(#print-clone) {
+    display: none !important;
+  }
+
+  #print-clone {
+    display: block !important;
+    width: 80mm !important;
+    max-width: 80mm !important;
+    padding: 0 1mm !important;
+    margin: 0 !important;
+    background: white !important;
+    box-sizing: border-box !important;
+    color: #000 !important;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: none !important;
+    font-smooth: never !important;
+  }
+
+  /* Thermal print weight profile (uniform output) */
+  #print-clone[style*="--print-weight: light"] {
+    --thermal-weight: 500;
+    --thermal-bold-weight: 700;
+  }
+
+  #print-clone[style*="--print-weight: normal"],
+  #print-clone:not([style*="--print-weight"]) {
+    --thermal-weight: 600;
+    --thermal-bold-weight: 800;
+  }
+
+  #print-clone[style*="--print-weight: bold"] {
+    --thermal-weight: 700;
+    --thermal-bold-weight: 900;
+  }
+
+  /* Base weight on container — children inherit naturally */
+  #print-clone {
+    font-weight: var(--thermal-weight) !important;
+  }
+
+  /* Bold elements: explicit inline font-weight (700+), classes, <b>, <strong> */
+  #print-clone [style*="font-weight: 7"],
+  #print-clone [style*="font-weight:7"],
+  #print-clone [style*="font-weight: 8"],
+  #print-clone [style*="font-weight:8"],
+  #print-clone [style*="font-weight: 9"],
+  #print-clone [style*="font-weight:9"],
+  #print-clone [style*="font-weight: bold"],
+  #print-clone [style*="font-weight:bold"],
+  #print-clone .font-bold,
+  #print-clone .font-semibold,
+  #print-clone b,
+  #print-clone strong {
+    font-weight: var(--thermal-bold-weight) !important;
+  }
+
+  /* Light and normal elements */
+  #print-clone .font-light,
+  #print-clone [style*="font-weight: 3"],
+  #print-clone [style*="font-weight:3"] {
+    font-weight: 400 !important;
+  }
+
+  #print-clone * {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    color: #000 !important;
+  }
+
+  #print-clone table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  #print-clone th,
+  #print-clone td {
+    padding: 0.5mm 1mm !important;
+    font-weight: inherit !important;
+  }
+
+  /* Keep border colors from template settings to match preview */
+
+  /* QR codes crisp */
+  #print-clone svg {
+    shape-rendering: crispEdges !important;
+  }
+
+  /* Logo sharp */
+  #print-clone img {
+    image-rendering: -webkit-optimize-contrast !important;
+    image-rendering: crisp-edges !important;
+  }
+
+  .print\:hidden {
+    display: none !important;
+  }
+}
+
+/* Mobile: tighten invoice preview so it never overflows on small screens */
+@media (max-width: 640px) {
+  #invoice-print-root {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  #invoice-area {
+    max-width: 100% !important;
+  }
+}
+
